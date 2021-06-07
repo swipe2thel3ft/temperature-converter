@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="15057"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-06-07 02:25:42 PM"/>
+        <attribute name="created" value="MTUwNTc7REVTS1RPUC1FVU5KR0wxOzIwMjEtMDYtMDc7MDE6MjI6MzYgUE07MjYxOQ=="/>
+        <attribute name="edited" value="MTUwNTc7REVTS1RPUC1FVU5KR0wxOzIwMjEtMDYtMDc7MDI6MjU6NDIgUE07MjsyNzI5"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="userInput" type="String" array="False" size=""/>
+            <output expression="&quot;Please type a Celsius tempurature (blank to quit) : &quot;" newline="False"/>
+            <input variable="userInput"/>
+            <while expression="Len(userInput) &gt; 0">
+                <output expression="&quot;Fahrenheit temprature: &quot;" newline="False"/>
+                <output expression="convertC2F(ToReal (userInput))" newline="True"/>
+                <output expression="&quot;Please type a Celsius tempurature (blank to quit) : &quot;" newline="False"/>
+                <input variable="userInput"/>
+            </while>
+        </body>
+    </function>
+    <function name="convertC2F" type="Real" variable="fahrenheit">
+        <parameters>
+            <parameter name="celsius" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="fahrenheit" type="Real" array="False" size=""/>
+            <assign variable="fahrenheit" expression="celsius * 9 / 5 + 32"/>
+        </body>
+    </function>
+</flowgorithm>

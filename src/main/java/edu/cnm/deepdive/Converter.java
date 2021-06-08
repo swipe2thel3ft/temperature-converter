@@ -9,7 +9,13 @@ public class Converter {
     System.out.print("Please type a celsius temperature (blank to quit): ");
     String userInput = scanner.nextLine();
     while (!userInput.isEmpty()) {
-      System.out.printf("Fahrenheit temperature: %,.2f degrees%nPlease type a celsius temperature (blank to quit):", convertC2F(Double.parseDouble(userInput)));
+      try {
+        System.out.printf(
+            "Fahrenheit temperature: %,.2f degrees%nPlease type a celsius temperature (blank to quit):",
+            convertC2F(Double.parseDouble(userInput)));
+      } catch (NumberFormatException e) {
+        System.out.printf("Unable to parse \"%s\". Please try again: ", userInput);
+      }
       userInput = scanner.nextLine();
     }
   }

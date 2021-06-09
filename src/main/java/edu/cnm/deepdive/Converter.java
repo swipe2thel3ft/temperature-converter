@@ -30,7 +30,7 @@ public class Converter {
   }
 
   public static double convertF2C(double fahrenheit) {
-    return 5 * (fahrenheit - FAHRENHEIT_FREEZING_POINT) / FAHRENHEIT_PER_CELSIUS;
+    return (fahrenheit - FAHRENHEIT_FREEZING_POINT) / FAHRENHEIT_PER_CELSIUS;
   }
 
 }

@@ -10,11 +10,18 @@ class ConverterTest {
   static double[] expectedFahrenheitValues = {-40, 32, 212, 98.78};
   static final double TOLERANCE = 0.0001;
 
+  static final double[][] temperaturePairs = {
+      {-40, -40},
+      {0, 32},
+      {100, 212},
+      {37.1, 98.78}
+  };
+
   @Test
   void convertC2F() {
-    for (int i = 0; i < celsiusValues.length; i++) {
-      double celsius = celsiusValues[i];
-      double expectedFahrenheit = expectedFahrenheitValues[i];
+    for (double[] testCase : temperaturePairs) {
+      double celsius = testCase[0];
+      double expectedFahrenheit = testCase[1];
       double actualFahrenheit = Converter.convertC2F(celsius);
       assertEquals(expectedFahrenheit, actualFahrenheit, TOLERANCE);
     }
@@ -22,6 +29,12 @@ class ConverterTest {
 
   @Test
   void convertF2C() {
- //TODO Implement the Fahrenheit-to-Celsius test
+    //TODO Implement the Fahrenheit-to-Celsius conversion.
+    for (double[] testCase : temperaturePairs) {
+      double fahrenheit  = testCase[1];
+      double expectedCelsius = testCase[0];
+      double actualCelsius = Converter.convertF2C(fahrenheit);
+      assertEquals(expectedCelsius, actualCelsius, TOLERANCE);
+    }
   }
 }
